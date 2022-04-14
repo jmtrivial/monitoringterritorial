@@ -14,7 +14,7 @@ wms = WebMapService(url)
 # http://epsg.io/map#srs=2154&x=706506.76&y=6518979.77&z=10&layer=streets
 centrex = 706506.76
 centrey = 6518979.77
-rayon = 500
+rayon = 200
 
 x1new= centrex - rayon
 x2new = centrex + rayon
@@ -24,7 +24,7 @@ y2new = centrey + rayon
 layer= 'ortho_irc'
 
 # nombre de pixels par mètre
-resolution = 10
+resolution = 5
 
 img = wms.getmap(layers = [layer], srs = 'EPSG:2154', bbox = [x1new,y1new,x2new,y2new] , size = (2 * rayon * resolution, 2 * rayon * resolution), format= 'image/png')
 
